@@ -4,7 +4,7 @@
 
 **[PREVIEW](   )**
 
-#Features
+# Features
 - discord logs
 - open source
 - resmon 0.0
