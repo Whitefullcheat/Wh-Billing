@@ -1,10 +1,15 @@
-# Wh-Billing
 # BILLING SYSTEM FOR ESX/QBCORE
 
 
 
 **[PREVIEW](   )**
 
+#Features
+- discord logs
+- open source
+- resmon 0.0
+- item based
+- easy configuration
 
 
 # Dependencies
