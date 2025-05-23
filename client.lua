@@ -170,6 +170,7 @@ AddEventHandler('wh-billing:OpenNUI', function(data)
                             TriggerServerEvent('wh-billing:pagafattura', data, method[1])
                         end
                         ExecuteCommand('e c')
+			ExecuteCommand('me Ha pagato una fattura di: $' .. data.amount)
                     else
                         ESX.ShowNotification('Hai annullato il pagamento della fattura!', 'error')
                         ExecuteCommand('e c')
