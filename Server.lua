@@ -95,7 +95,10 @@ if paid then
         end
     end
 end
+end)
 
+lib.callback.register('wh-billing:pagafattura', function()
+    return paid
 end)
 
 ESX.RegisterUsableItem(Config.Item.name, function(source, null, data)
