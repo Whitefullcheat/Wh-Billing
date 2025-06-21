@@ -164,13 +164,14 @@ AddEventHandler('wh-billing:OpenNUI', function(data)
                     })
     
                     if method and method[1] then
-                        if method[1] == 'bank' then
-                            TriggerServerEvent('wh-billing:pagafattura', data, method[1])
+                        TriggerServerEvent('wh-billing:pagafattura', data, method[1])
+                        local success = lib.callback.await('wh-billing:pagafattura')
+                        if success then
+			                ExecuteCommand('me ~g~Ha pagato una fattura di: $' .. data.amount)
                         else
-                            TriggerServerEvent('wh-billing:pagafattura', data, method[1])
+                            ExecuteCommand('me ~r~Non ha pagato la fattura di: $' .. data.amount)
                         end
                         ExecuteCommand('e c')
-			ExecuteCommand('me Ha pagato una fattura di: $' .. data.amount)
                     else
                         ESX.ShowNotification('Hai annullato il pagamento della fattura!', 'error')
                         ExecuteCommand('e c')
